@@ -1,32 +1,34 @@
+import React, { useState } from 'react';
+import './App.css';
 
+function ThemeToggler() {
+  const [isDark, setIsDark] = useState(false);
 
-function Welcome() {
-  const name = "Tamana";
-  return <h1>Hello, {name}! Welcome to React.</h1>;
-}
+  // Style object based on theme
+  const themeStyle = {
+    backgroundColor: isDark ? "#333" : "#f4f4f4",
+    color: isDark ? "#fff" : "#000",
+    padding: "30px",
+    borderRadius: "10px",
+    textAlign: "center",
+    transition: "all 0.3s ease"
+  };
 
-function ProfileCard({ name, bio, location  }) {
-  return <div className="info">
-    <h2>{name}</h2>
-    <p>{bio}</p>
-    <p>{location}</p>
+  return (
+    <div style={themeStyle}>
+      <h2>Current Theme: {isDark ? "Dark Mode" : "Light Mode"}</h2>
+      <button onClick={() => setIsDark(!isDark)}>
+        Toggle Theme
+      </button>
     </div>
+  );
 }
 
-function Footer(prop) {
-  return <p>© {prop.year} {prop.name} All rights reserved.</p>;
-}
 
 function App() {
   return (
-    <div className="App">
-      <Welcome />
-      <ProfileCard 
-        name={"Tamana"}
-        bio={"A passionate developer."}
-        location={"Dhaka, Bangladesh"} />
-      <Footer year = {2025} name = {"Tamana"} />
-      
+   <div className= "App" >
+      <ThemeToggler />
     </div>
   );
 }
