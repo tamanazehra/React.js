@@ -1,12 +1,11 @@
 
-import pfp from './assets/pfp.png';
 
-function Card(){
+function Card(props){
     return(
         <div className="card">
-            <img className="pfp" src={pfp} alt="profile picture"/>
-            <h2 className='cardTitle'>Tamana Zehra</h2>
-            <p className='cardText'>Web Developer</p>
+            <img className="pfp"src={props.img} alt="profile picture" ></img>
+            <h2 className='cardTitle'>{props.name}</h2>
+            <p className='cardText'>{props.description}</p>
             <button className='followBtn'>Follow</button>
 
         </div>

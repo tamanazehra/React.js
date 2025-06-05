@@ -1,4 +1,17 @@
+body {
+  background-color: #5c5858; /* or any color you want */
+}
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 20px;
+  padding: 20px;
+}
+
 .card{
+  background-color: hsl(0, 0%, 100%);
   border: 1px solid rgb(210, 210, 210);
   border-radius: 10px;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
@@ -6,18 +19,25 @@
   padding: 20px;
   text-align: center;
   max-width: 250px;
-  display: inline-block;
+  min-height: 250px; /* ensures equal height */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .card .pfp{
-  max-width: 60%;
+  max-width: 50%;
   height: auto;
   border-radius: 0%;
   margin-bottom: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .card .cardTitle{
-  font-size: 1.3em;
+ font-size: 1.6em;
   font-family: 'Arial', sans-serif;
   font-weight: bold;
   margin: 0;
@@ -25,7 +45,7 @@
 }
 
 .card .cardText{
-  font-size: 1em;
+  font-size: 1.2em;
   font-family: 'Arial', sans-serif;
   margin: 5px;
   color: hsl(0, 0%, 30%);
@@ -40,4 +60,5 @@
   font-size: 1em;
   font-family: 'Arial', sans-serif;
   color: hsl(0, 3%, 76%);
+  width: 50%;
 }
